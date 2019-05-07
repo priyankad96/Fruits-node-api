@@ -1,0 +1,880 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Fruits Api",
+        "description": "Fruit Bazaar",
+        "version": "0.1"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3001/"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/user": {
+            "get": {
+                "tags": [
+                    "Login"
+                ],
+                "description": "get user data",
+                "responses": {
+                    "200": {
+                        "description": "Auto generated using Swagger Inspector",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "examples": {}
+                            }
+                        }
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "http://localhost:3001/"
+                    }
+                ]
+            },
+            "servers": [
+                {
+                    "url": "http://localhost:3001/"
+                }
+            ]
+        },
+        "/user/login": {
+            "post": {
+                "tags": [
+                    "Login"
+                ],
+                "description": "login to the system",
+                "parameters": [
+                    {
+                        "name": "Login",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/components/schemas/login"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Auto generated using Swagger Inspector",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "examples": {}
+                            }
+                        }
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "http://localhost:3001/"
+                    }
+                ]
+            },
+            "servers": [
+                {
+                    "url": "http://localhost:3001/"
+                }
+            ]
+        },
+        "/user/UserForLogin": {
+            "post": {
+                "tags": [
+                    "Login"
+                ],
+                "description": "add credentials to the system",
+                "parameters": [
+                    {
+                        "name": "Add credentials Login",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/components/schemas/addCredentials"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Auto generated using Swagger Inspector",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "examples": {}
+                            }
+                        }
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "http://localhost:3001/"
+                    }
+                ]
+            },
+            "servers": [
+                {
+                    "url": "http://localhost:3001/"
+                }
+            ]
+        },
+        "/register/register/data": {
+            "get": {
+                "tags": [
+                    "Register"
+                ],
+                "description": "get user data",
+                "responses": {
+                    "200": {
+                        "description": "Auto generated using Swagger Inspector",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "examples": {}
+                            }
+                        }
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "http://localhost:3001/"
+                    }
+                ]
+            },
+            "servers": [
+                {
+                    "url": "http://localhost:3001/"
+                }
+            ]
+        },
+        "/register": {
+            "post": {
+                "tags": [
+                    "Register"
+                ],
+                "description": "register to the system",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "type": "string",
+                        "required": "true"
+                    },
+                    {
+                        "name": "email",
+                        "in": "formData",
+                        "type": "string",
+                        "required": "true"
+                    },
+                    {
+                        "name": "countryId",
+                        "in": "formData",
+                        "type": "integer",
+                        "required": "true"
+                    },
+                    {
+                        "name": "stateId",
+                        "in": "formData",
+                        "type": "integer",
+                        "required": "true"
+                    },
+                    {
+                        "name": "salary",
+                        "in": "formData",
+                        "type": "integer",
+                        "required": "true"
+                    },
+                    {
+                        "name": "image",
+                        "in": "formData",
+                        "type": "file",
+                        "required": "true"
+                    }
+                ],
+                "produces": [
+                    "multipart/form-data"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Auto generated using Swagger Inspector",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "examples": {}
+                            }
+                        }
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "http://localhost:3001/"
+                    }
+                ]
+            },
+            "servers": [
+                {
+                    "url": "http://localhost:3001/"
+                }
+            ]
+        },
+        "/fruits": {
+            "post": {
+                "tags": [
+                    "Fruits"
+                ],
+                "description": "add fruits to the system",
+                "parameters": [
+                    {
+                        "name": "fruitsname",
+                        "in": "formData",
+                        "type": "string",
+                        "required": "true"
+                    },
+                    {
+                        "name": "description",
+                        "in": "formData",
+                        "type": "string",
+                        "required": "true"
+                    },
+                    {
+                        "name": "image",
+                        "in": "formData",
+                        "type": "file",
+                        "required": "true",
+                        "multiple": "true"
+                    },
+                    {
+                        "name": "price",
+                        "in": "formData",
+                        "type": "integer",
+                        "required": "true"
+                    }
+                ],
+                "produces": [
+                    "multipart/form-data"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Auto generated using Swagger Inspector",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "examples": {}
+                            }
+                        }
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "http://localhost:3001/"
+                    }
+                ]
+            },
+            "servers": [
+                {
+                    "url": "http://localhost:3001/"
+                }
+            ]
+        },
+        "/fruits/getFruits": {
+            "get": {
+                "tags": [
+                    "Fruits"
+                ],
+                "description": "get fruits data",
+                "responses": {
+                    "200": {
+                        "description": "Auto generated using Swagger Inspector",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "examples": {}
+                            }
+                        }
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "http://localhost:3001/"
+                    }
+                ]
+            },
+            "servers": [
+                {
+                    "url": "http://localhost:3001/"
+                }
+            ]
+        },
+        "/fruits/{id}": {
+            "get": {
+                "tags": [
+                    "Fruits"
+                ],
+                "description": "get fruits by fruits id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "integer",
+                        "required": true
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Auto generated using Swagger Inspector",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "examples": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/fruits/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Fruits"
+                ],
+                "description": "delete fruit by fruits id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "integer",
+                        "required": true
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Auto generated using Swagger Inspector",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "examples": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/fruits/update/{id}": {
+            "put": {
+                "tags": [
+                    "Fruits"
+                ],
+                "description": "Update fruits",
+                "parameters": [
+                    {
+                        "name": "editFruits",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/components/schemas/Updatefruits"
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Auto generated using Swagger Inspector",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "examples": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/delivery": {
+            "post": {
+                "tags": [
+                    "Delivery Details"
+                ],
+                "description": "add delivery details to the system",
+                "parameters": [
+                    {
+                        "name": "Add delivery details",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/components/schemas/AddDeliveryDetails"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Auto generated using Swagger Inspector",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "examples": {}
+                            }
+                        }
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "http://localhost:3001/"
+                    }
+                ]
+            },
+            "servers": [
+                {
+                    "url": "http://localhost:3001/"
+                }
+            ]
+        },
+        "/delivery/{uid}": {
+            "get": {
+                "tags": [
+                    "Delivery Details"
+                ],
+                "description": "get delivery details by user id",
+                "parameters": [
+                    {
+                        "name": "uid",
+                        "in": "path",
+                        "type": "integer",
+                        "required": true
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Auto generated using Swagger Inspector",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "examples": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/cart": {
+            "post": {
+                "tags": [
+                    "Cart"
+                ],
+                "description": "add fruits to cart",
+                "parameters": [
+                    {
+                        "name": "Cart",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/components/schemas/AddToCart"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Auto generated using Swagger Inspector",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "examples": {}
+                            }
+                        }
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "http://localhost:3001/"
+                    }
+                ]
+            },
+            "servers": [
+                {
+                    "url": "http://localhost:3001/"
+                }
+            ]
+        },
+        "/cart/{uid}": {
+            "get": {
+                "tags": [
+                    "Cart"
+                ],
+                "description": "get cart details by user id",
+                "parameters": [
+                    {
+                        "name": "uid",
+                        "in": "path",
+                        "type": "integer",
+                        "required": true
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Auto generated using Swagger Inspector",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "examples": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/cart/fruit/{fid}": {
+            "get": {
+                "tags": [
+                    "Cart"
+                ],
+                "description": "get cart details by fruit id",
+                "parameters": [
+                    {
+                        "name": "fid",
+                        "in": "path",
+                        "type": "integer",
+                        "required": true
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Auto generated using Swagger Inspector",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "examples": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/cart/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Cart"
+                ],
+                "description": "delete from cart by cart id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "type": "integer",
+                        "required": true
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Auto generated using Swagger Inspector",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "examples": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/cart/{fid}/{uid}": {
+            "put": {
+                "tags": [
+                    "Cart"
+                ],
+                "description": "Update order",
+                "parameters": [
+                    {
+                        "name": "fid",
+                        "in": "path",
+                        "description": "",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "uid",
+                        "in": "path",
+                        "description": "",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Auto generated using Swagger Inspector",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "examples": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/order": {
+            "post": {
+                "tags": [
+                    "Order"
+                ],
+                "description": "Order Your fruits",
+                "parameters": [
+                    {
+                        "name": "Order",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/components/schemas/Order"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Auto generated using Swagger Inspector",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "examples": {}
+                            }
+                        }
+                    }
+                },
+                "servers": [
+                    {
+                        "url": "http://localhost:3001/"
+                    }
+                ]
+            },
+            "servers": [
+                {
+                    "url": "http://localhost:3001/"
+                }
+            ]
+        }
+    },
+    "components": {
+        "schemas": {
+            "login": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    }
+                }
+            },
+            "register": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "countryId": {
+                        "type": "integer"
+                    },
+                    "stateId": {
+                        "type": "integer"
+                    },
+                    "salary": {
+                        "type": "integer"
+                    },
+                    "image": {
+                        "type": "string"
+                    }
+                }
+            },
+            "addCredentials": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string"
+                    },
+                    "role": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Addfruits": {
+                "type": "object",
+                "properties": {
+                    "fruitsname": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "image": {
+                        "type": "string"
+                    },
+                    "price": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "Updatefruits": {
+                "type": "object",
+                "properties": {
+                    "fruitsname": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "price": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "AddDeliveryDetails": {
+                "type": "object",
+                "properties": {
+                    "address": {
+                        "type": "string"
+                    },
+                    "state": {
+                        "type": "string"
+                    },
+                    "country": {
+                        "type": "string"
+                    },
+                    "pincode": {
+                        "type": "integer"
+                    },
+                    "contactNo": {
+                        "type": "string"
+                    },
+                    "userId": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "AddToCart": {
+                "type": "object",
+                "properties": {
+                    "userId": {
+                        "type": "integer"
+                    },
+                    "fruitId": {
+                        "type": "integer"
+                    },
+                    "quantity": {
+                        "type": "integer"
+                    },
+                    "isOrdered": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "Order": {
+                "type": "object",
+                "properties": {
+                    "userId": {
+                        "type": "integer"
+                    },
+                    "fruitId": {
+                        "type": "integer"
+                    },
+                    "deliveryId": {
+                        "type": "integer"
+                    },
+                    "quantity": {
+                        "type": "integer"
+                    },
+                    "totalPrice": {
+                        "type": "integer"
+                    }
+                }
+            }
+        }
+    }
+}

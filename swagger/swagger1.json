@@ -1,0 +1,177 @@
+{
+  "swagger": "2.0" ,
+  "info": {
+    "version": "1.0.0" ,
+    "title": "Node Backend Architecture" ,
+    "description": "Node Backend Architecture" ,
+    "license": {
+      "name": "MIT" ,
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:3003",
+  "tags": [
+    {
+      "name": "User" ,
+      "description": "API for User in the system"
+    },
+    {
+      "name": "Notification" ,
+      "description": "API for notification in the system"
+    }
+  ] ,
+  "schemes": [
+    "http"
+  ] ,
+  "consumes": [
+    "application/json"
+  ] ,
+  "produces": [
+    "application/json"
+  ] ,
+  "paths": {
+    "/users": {
+      "post": {
+        "tags": [
+          "Registration"
+        ] ,
+        "summary": "User Registration" ,
+        "description": "create new user in system" ,
+        "parameters": [
+          {
+            "name": "userRegistration",
+            "in": "body",
+            "description": "User that we want to create",
+            "schema": {
+              "$ref": "#/definitions/registration"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ] ,
+        "responses": {
+          "200": {"$ref": "#/responses/notification_server_response"},
+          "400": {"$ref": "#/responses/default_server_error"}
+        },
+        "security":[ {"Bearer":[]}]
+      } ,
+      "get":{
+        "tags": [
+          "Registration"
+        ],
+        "summary":"Get all applicant in system",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/notification_server_response"
+          },
+          "400": {
+            "$ref": "#/responses/default_server_error"
+          },
+          "401": {
+            "$ref": "#/responses/server_authorization_error"
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "put": {
+        "tags": [
+          "Registration"
+        ],
+        "summary":"update user data of system",
+        "description":"Update Information about User",
+        "parameters":[
+          {
+            "name":"EditUser",
+            "in":"body",
+            "description":"Update User",
+            "schema":{
+              "$ref":"#/definitions/registration"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "type":"string",
+            "required": true
+          }
+        ],
+        "produces":["application/json"],
+        "responses": {
+          "200": {"$ref": "#/responses/notification_server_response"},
+          "400": {"$ref": "#/responses/default_server_error"},
+          "401": {"$ref": "#/responses/server_authorization_error"}
+        }
+      }
+    }
+  },
+  "definitions": {
+    "server_error_model": {
+      "type": "object",
+      "required": "message",
+      "properties": {
+        "error": {"type": "string"}
+      }
+    },
+    "server_status_response" :{
+      "properties":{
+        "details": {
+          "properties": {
+            "status": "string",
+            "data": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "type": "object"
+    },
+    "server_authorization_model":{
+      "type": "object",
+      "required": "message",
+      "properties": {
+        "error": {"type": "string"}
+      }
+    },
+    "registration": {
+      "required": ["username"],
+      "properties": {
+        "firstname": {
+          "type": "string"
+        },
+        "lastname": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "department": {
+          "type": "string"
+        },
+        "dob": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  },
+  "responses":{
+    "default_server_error":{
+      "description": "unexpected error",
+      "schema":{ "$ref": "#/definitions/server_error_model"}
+    },
+    "notification_server_response": {
+      "description": "The server status will be returned",
+      "schema":{ "$ref": "#/definitions/server_status_response"}
+    },
+    "server_authorization_error":{
+      "description": "Authorization Error. Thrown if the user does not have access to resource.",
+      "schema":{ "$ref": "#/definitions/server_authorization_model"}
+    }
+  }
+}
